@@ -8,7 +8,7 @@ const Contact = () => {
     email: '',
     message: ''
   })
-    const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [error, setError] = useState('')
 
@@ -18,18 +18,17 @@ const Contact = () => {
       [e.target.name]: e.target.value
     })
   }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setError('')
 
     try {
-      // Configuración de EmailJS (usando variables de entorno)
       const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID
       const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-      // Validar que las credenciales estén configuradas
       if (!serviceID || serviceID === 'your_service_id') {
         throw new Error('VITE_EMAILJS_SERVICE_ID no está configurado correctamente')
       }
@@ -54,7 +53,6 @@ const Contact = () => {
       setIsSubmitted(true)
       setFormData({ name: '', email: '', message: '' })
       
-      // Reset success message after 5 seconds
       setTimeout(() => setIsSubmitted(false), 5000)
     } catch (emailError) {
       console.error('Error sending email:', emailError)
@@ -65,137 +63,124 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-20 px-6 bg-gray-50">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
             Contacto
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mb-8"></div>
+          <div className="w-16 h-px bg-gray-400 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-600 font-light">
+            ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas
+          </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          {isSubmitted && (
-            <div className="mb-8 p-4 bg-green-500/10 border border-green-500/30 rounded-xl flex items-center gap-3">
-              <CheckCircle className="w-5 h-5 text-green-400" />
-              <p className="text-green-300">¡Mensaje enviado correctamente! Te responderé pronto.</p>
+        {isSubmitted && (
+          <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-sm flex items-center gap-3 max-w-2xl mx-auto">
+            <CheckCircle className="w-5 h-5 text-green-600" />
+            <p className="text-green-700">¡Mensaje enviado correctamente! Te responderé pronto.</p>
+          </div>
+        )}
+
+        {error && (
+          <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-sm flex items-center gap-3 max-w-2xl mx-auto">
+            <AlertCircle className="w-5 h-5 text-red-600" />
+            <p className="text-red-700">{error}</p>
+          </div>
+        )}
+
+        <div className="bg-white rounded-sm border border-gray-200 p-8 md:p-12 max-w-2xl mx-auto">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <User className="w-4 h-4 inline mr-2" />
+                Nombre
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-sm
+                         text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-1 
+                         focus:ring-gray-900 focus:border-gray-900 transition-all duration-200"
+                placeholder="Tu nombre completo"
+              />
             </div>
-          )}
 
-          {error && (
-            <div className="mb-8 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3">
-              <AlertCircle className="w-5 h-5 text-red-400" />
-              <p className="text-red-300">{error}</p>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <Mail className="w-4 h-4 inline mr-2" />
+                Correo electrónico
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-sm
+                         text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-1 
+                         focus:ring-gray-900 focus:border-gray-900 transition-all duration-200"
+                placeholder="tu@email.com"
+              />
             </div>
-          )}
 
-          <div className="bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 p-8">
-            <div className="text-center mb-8">
-              <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">¡Hablemos!</h3>
-              <p className="text-gray-400">
-                ¿Tienes un proyecto en mente? Me encantaría conocer más detalles.
-              </p>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <MessageSquare className="w-4 h-4 inline mr-2" />
+                Mensaje
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-sm
+                         text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-1 
+                         focus:ring-gray-900 focus:border-gray-900 transition-all duration-200
+                         resize-none"
+                placeholder="Cuéntame sobre tu proyecto o idea..."
+              />
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Campo Nombre */}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  <User className="w-4 h-4 inline mr-2" />
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg
-                           text-white placeholder-gray-400 focus:outline-none focus:ring-2 
-                           focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200"
-                  placeholder="Tu nombre completo"
-                />
-              </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full px-6 py-4 bg-gray-900 text-white font-medium rounded-sm 
+                       hover:bg-gray-800 transition-all duration-300 
+                       disabled:opacity-50 disabled:cursor-not-allowed
+                       flex items-center justify-center gap-3"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Enviando mensaje...
+                </>
+              ) : (
+                <>
+                  <Send className="w-5 h-5" />
+                  Enviar mensaje
+                </>
+              )}
+            </button>
+          </form>
 
-              {/* Campo Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  <Mail className="w-4 h-4 inline mr-2" />
-                  Correo electrónico
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg
-                           text-white placeholder-gray-400 focus:outline-none focus:ring-2 
-                           focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200"
-                  placeholder="tu@email.com"
-                />
-              </div>
-
-              {/* Campo Mensaje */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  <MessageSquare className="w-4 h-4 inline mr-2" />
-                  Mensaje
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg
-                           text-white placeholder-gray-400 focus:outline-none focus:ring-2 
-                           focus:ring-blue-500/50 focus:border-blue-500/50 transition-all duration-200
-                           resize-none"
-                  placeholder="Cuéntame sobre tu proyecto o idea..."
-                />
-              </div>
-
-              {/* Botón de envío */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-500 
-                         text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-600 
-                         transition-all duration-300 transform hover:scale-105 shadow-lg 
-                         hover:shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed
-                         disabled:transform-none flex items-center justify-center gap-3"
+          <div className="mt-8 pt-6 border-t border-gray-200 text-center">
+            <p className="text-gray-600 text-sm font-light">
+              También puedes contactarme directamente en: 
+              <a 
+                href="mailto:robertoparetdev@gmail.com" 
+                className="text-gray-900 hover:underline transition-colors ml-1 font-medium"
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Enviando mensaje...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Enviar mensaje
-                  </>
-                )}
-              </button>
-            </form>
-
-            {/* Información adicional */}
-            <div className="mt-8 pt-6 border-t border-gray-700/50 text-center">
-              <p className="text-gray-400 text-sm">
-                También puedes contactarme directamente en: 
-                <a 
-                  href="mailto:robertoparetdev@gmail.com" 
-                  className="text-blue-400 hover:text-blue-300 transition-colors ml-1"
-                >
-                  robertoparetdev@gmail.com
-                </a>
-              </p>
-            </div>
+                robertoparetdev@gmail.com
+              </a>
+            </p>
           </div>
         </div>
       </div>

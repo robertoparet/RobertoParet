@@ -20,19 +20,20 @@ const Header = () => {
     { name: 'Hobbies', href: '#hobbies' },
     { name: 'Contacto', href: '#contact' },
   ]
-
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-slate-900/95 backdrop-blur-md shadow-lg shadow-black/20' 
+        ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' 
         : 'bg-transparent'
     }`}>
-      <nav className="container-max mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo/Nombre */}
-          <div className="text-2xl font-bold gradient-text">
+      <nav className="container-max mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">          {/* Logo/Nombre */}
+          <a 
+            href="#hero" 
+            className="text-2xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-200 cursor-pointer"
+          >
             Roberto Paret
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
@@ -40,7 +41,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-slate-300 hover:text-white transition-colors duration-200 hover:underline hover:decoration-blue-400"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -49,7 +50,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-gray-900 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,17 +61,15 @@ const Header = () => {
               )}
             </svg>
           </button>
-        </div>
-
-        {/* Mobile Menu */}
+        </div>        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-slide-up">
-            <div className="flex flex-col space-y-3 bg-slate-800/50 rounded-lg p-4 backdrop-blur-sm">
+            <div className="flex flex-col space-y-3 bg-white/95 rounded-lg p-4 backdrop-blur-sm border border-gray-100 shadow-lg">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-slate-300 hover:text-white transition-colors duration-200 py-2 border-b border-slate-700 last:border-b-0"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-200 py-2 border-b border-gray-100 last:border-b-0 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
