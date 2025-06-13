@@ -30,7 +30,7 @@ const Skills = () => {
     {
       title: "Automatización",
       icon: <Zap className="w-6 h-6" />,
-      skills: ["N8N (con integración de IA)"]
+      skills: ["N8N"]
     }
   ]
 
