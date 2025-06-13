@@ -22,7 +22,7 @@ const Hobbies = () => {
           
           <div className="mt-8 text-center">
             <a 
-              href="https://robert-s-camera-perspective.vercel.app/"
+              href="https://gallery.robertoparet.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-3 border border-gray-300 
