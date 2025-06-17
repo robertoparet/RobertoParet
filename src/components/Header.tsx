@@ -11,12 +11,12 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
   const navItems = [
     { name: 'Inicio', href: '#hero' },
     { name: 'Sobre mí', href: '#about' },
     { name: 'Habilidades', href: '#skills' },
     { name: 'Soluciones', href: '#solutions' },
+    { name: 'Proyectos', href: '#projects' },
     { name: 'Hobbies', href: '#hobbies' },
     { name: 'Contacto', href: '#contact' },
   ]
