@@ -14,12 +14,12 @@ const Hero = () => {
           
           {/* Subtitle */}
           <div className="animate-typewriter text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-8 font-light inline-block" style={{animationDelay: '1.8s'}}>
-            Desarrollador Full Stack
+            Desarrollo Digital & Fotografía
           </div>
           
           {/* Description */}
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed animate-slide-up font-light" style={{animationDelay: '4s'}}>
-            Creo soluciones digitales elegantes y funcionales con un enfoque minimalista y atención al detalle.
+            Ayudo a marcas a destacar con presencia web moderna y contenido visual que conecta con su audiencia.
           </p>
             {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{animationDelay: '4.5s'}}>

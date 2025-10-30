@@ -1,4 +1,4 @@
-import { Code, Database, Palette, GitBranch, Zap } from 'lucide-react'
+import { Code, Database, Palette, GitBranch } from 'lucide-react'
 
 const Skills = () => {
   const skillCategories = [
@@ -26,11 +26,6 @@ const Skills = () => {
       title: "Control de versiones",
       icon: <GitBranch className="w-6 h-6" />,
       skills: ["Git"]
-    },
-    {
-      title: "Automatización",
-      icon: <Zap className="w-6 h-6" />,
-      skills: ["N8N"]
     }
   ]
 

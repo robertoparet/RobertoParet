@@ -12,13 +12,13 @@ const About = () => {
         <div className="bg-white rounded-sm border border-gray-200 p-8 md:p-12">
           <div className="text-gray-700 text-lg leading-relaxed space-y-6 font-light">
             <p>
-              Soy <span className="text-gray-900 font-medium">Roberto Paret</span>, desarrollador de software desde 2022. 
-              Me especializo en crear soluciones funcionales y elegantes que combinan lógica, diseño y eficiencia. 
-              Trabajo con tecnologías como Java, SQL y frameworks modernos tanto en frontend como en backend.
+              Soy <span className="text-gray-900 font-medium">Roberto Paret</span>, especialista en desarrollo web y fotografía creativa. 
+              Trabajo con marcas y negocios que buscan fortalecer su presencia digital a través de sitios web modernos, 
+              funcionales y contenido visual que cuenta historias.
             </p>
             <p>
-              Disfruto resolver problemas complejos y dar vida a ideas mediante código limpio y bien estructurado. 
-              Siempre busco maneras de mejorar, automatizar procesos y crear herramientas que realmente aporten valor.
+              Desde aplicaciones web robustas hasta fotografía de eventos, locales y gastronomía, mi enfoque combina 
+              tecnología y creatividad para ayudarte a conectar con tu audiencia de forma auténtica y profesional.
             </p>
           </div>
         </div>

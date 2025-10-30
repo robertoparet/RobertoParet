@@ -1,19 +1,20 @@
-import { Globe, Zap, Smartphone } from 'lucide-react'
+import { Globe, Smartphone, Camera } from 'lucide-react'
 
 const Solutions = () => {
   const solutions = [
     {
       title: "Desarrollo Web",
-      description: "Aplicaciones web modernas y escalables con tecnologías robustas como React, Java y bases de datos optimizadas.",
+      description: "Sitios web modernos y aplicaciones que potencian tu marca, optimizados para conversión y experiencia de usuario.",
       icon: <Globe className="w-8 h-8" />
-    },    {
-      title: "Automatizaciones",
-      description: "Sistemas automatizados con N8N para gestión de citas, pedidos y optimización de procesos empresariales.",
-      icon: <Zap className="w-8 h-8" />
+    },
+    {
+      title: "Fotografía de Marca",
+      description: "Fotografía profesional para eventos, espacios comerciales y gastronomía que captura la esencia de tu negocio.",
+      icon: <Camera className="w-8 h-8" />
     },
     {
       title: "Diseño Responsivo",
-      description: "Interfaces elegantes y funcionales que se adaptan perfectamente a cualquier dispositivo y pantalla.",
+      description: "Interfaces elegantes que se adaptan perfectamente a cualquier dispositivo, garantizando accesibilidad total.",
       icon: <Smartphone className="w-8 h-8" />
     }
   ]
@@ -27,7 +28,7 @@ const Solutions = () => {
           </h2>
           <div className="w-16 h-px bg-gray-400 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">
-            Desarrollo aplicaciones que resuelven necesidades reales con elegancia y eficiencia
+            Soluciones integrales para fortalecer la presencia digital de tu marca
           </p>
         </div>
         
@@ -52,10 +53,6 @@ const Solutions = () => {
               </p>
             </div>
           ))}
-        </div>        <div className="mt-12 bg-gray-50 border border-gray-200 rounded-sm p-6 text-center">
-          <p className="text-gray-900 font-medium">
-            🚀 Próximamente: Integración de IA avanzada para análisis predictivo, automatización inteligente y generación de insights en tiempo real
-          </p>
         </div>
       </div>
     </section>
