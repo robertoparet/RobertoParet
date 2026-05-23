@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Search, MonitorSmartphone, Camera } from 'lucide-react'
+import { Code2, Smartphone, Search, MonitorSmartphone, Camera, Wrench } from 'lucide-react'
 
 const Solutions = () => {
   const solutions = [
@@ -26,6 +26,11 @@ const Solutions = () => {
       title: "Fotografía de Marca",
       description: "Producción visual profesional para eventos, espacios y gastronomía que refuerza la identidad y comunicación de tu marca.",
       icon: <Camera className="w-8 h-8" />
+    },
+    {
+      title: "Mantenimiento & Soporte",
+      description: "Actualizaciones, monitoreo y soporte continuo para que tus aplicaciones funcionen siempre al máximo rendimiento.",
+      icon: <Wrench className="w-8 h-8" />
     }
   ]
 

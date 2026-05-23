@@ -4,6 +4,7 @@ import Solutions from './components/Solutions'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   )
 }
