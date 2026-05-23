@@ -13,13 +13,13 @@ const Hero = () => {
           </h1>
           
           {/* Subtitle */}
-          <div className="animate-typewriter text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-8 font-light inline-block" style={{animationDelay: '1.8s'}}>
-            Desarrollo Digital & Fotografía
+          <div className="animate-typewriter text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 mb-8 font-light inline-block max-w-full" style={{animationDelay: '1.8s'}}>
+            Soluciones Digitales a Medida
           </div>
-          
+
           {/* Description */}
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed animate-slide-up font-light" style={{animationDelay: '4s'}}>
-            Ayudo a marcas a destacar con presencia web moderna y contenido visual que conecta con su audiencia.
+            Diseño y desarrollo aplicaciones web y móviles personalizadas, con enfoque en rendimiento, SEO y diseño responsivo, para impulsar el crecimiento de tu marca.
           </p>
             {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{animationDelay: '4.5s'}}>
@@ -29,10 +29,10 @@ const Hero = () => {
             >
               Trabajemos Juntos
             </a>            <a
-              href="#about"
+              href="#projects"
               className="border border-gray-300 text-gray-700 px-8 py-4 rounded-sm font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-300"
             >
-              Ver mi trabajo
+              Ver Proyectos
             </a>
           </div>
         </div>

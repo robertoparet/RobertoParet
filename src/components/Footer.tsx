@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-white border-t border-gray-200 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center space-y-8">
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
             <a 
               href="https://instagram.com/robertdev_" 
               target="_blank" 

@@ -39,8 +39,6 @@ const Contact = () => {
         throw new Error('VITE_EMAILJS_PUBLIC_KEY no está configurado correctamente')
       }
 
-      console.log('Enviando email con:', { serviceID, templateID, publicKey: publicKey.substring(0, 10) + '...' })
-
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,

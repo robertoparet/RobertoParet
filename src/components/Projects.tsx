@@ -22,6 +22,13 @@ const Projects = () => {
       url: "https://mhospedaje.robertoparet.com/",
       category: "Hospitalidad",
       image: "🏨"
+    },
+    {
+      title: "Mochila Viajera",
+      description: "Plataforma web para viajeros con recursos, guías y contenido visual para inspirar la próxima aventura.",
+      url: "https://mochila-viajera.robertoparet.com/",
+      category: "Viajes",
+      image: "🎒"
     }
   ]
 
@@ -38,7 +45,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}

@@ -13,11 +13,8 @@ const Header = () => {
   }, [])
   const navItems = [
     { name: 'Inicio', href: '#hero' },
-    { name: 'Sobre mí', href: '#about' },
-    { name: 'Habilidades', href: '#skills' },
-    { name: 'Soluciones', href: '#solutions' },
+    { name: 'Servicios', href: '#solutions' },
     { name: 'Proyectos', href: '#projects' },
-    { name: 'Hobbies', href: '#hobbies' },
     { name: 'Contacto', href: '#contact' },
   ]
   return (
