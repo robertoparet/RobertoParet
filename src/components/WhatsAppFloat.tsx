@@ -1,7 +1,7 @@
 import WhatsAppIcon from './WhatsAppIcon'
 
 const WhatsAppFloat = () => {
-  const whatsappNumber = '346315433678'
+  const whatsappNumber = '34631543378'
   const message = encodeURIComponent(
     'Hola Roberto, vengo desde tu portafolio y me gustaría hablar contigo sobre un proyecto.'
   )

@@ -3,8 +3,8 @@ import WhatsAppIcon from './WhatsAppIcon'
 
 const Contact = () => {
   const email = 'robertoparetdev@gmail.com'
-  const phoneDisplay = '+34 631 543 3678'
-  const whatsappNumber = '346315433678'
+  const phoneDisplay = '+34 631 543 378'
+  const whatsappNumber = '34631543378'
   const whatsappMessage = encodeURIComponent('Hola Roberto, me gustaría hablar contigo sobre un proyecto.')
 
   const channels = [
