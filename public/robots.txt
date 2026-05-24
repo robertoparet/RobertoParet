@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Bloquea archivos sensibles si los hubiera
+Disallow: /api/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://robertoparet.com/sitemap.xml
+
+# Host
+Host: https://robertoparet.com

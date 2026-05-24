@@ -1,11 +1,8 @@
 import WhatsAppIcon from './WhatsAppIcon'
+import { whatsappLink } from '../lib/site-config'
 
 const WhatsAppFloat = () => {
-  const whatsappNumber = '34631543378'
-  const message = encodeURIComponent(
-    'Hola Roberto, vengo desde tu portafolio y me gustaría hablar contigo sobre un proyecto.'
-  )
-  const href = `https://wa.me/${whatsappNumber}?text=${message}`
+  const href = whatsappLink()
 
   return (
     <a

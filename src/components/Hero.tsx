@@ -10,6 +10,7 @@ const Hero = () => {
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 animate-letter-spacing text-gray-900" style={{animationDelay: '0.4s'}}>
             Roberto Paret
+            <span className="sr-only"> — Desarrollo Web, Apps Móviles, SEO y Fotografía de Marca en Galicia</span>
           </h1>
           
           {/* Subtitle */}

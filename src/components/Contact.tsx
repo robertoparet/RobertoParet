@@ -1,26 +1,22 @@
 import { Mail, ArrowUpRight } from 'lucide-react'
 import WhatsAppIcon from './WhatsAppIcon'
+import { siteConfig, whatsappLink } from '../lib/site-config'
 
 const Contact = () => {
-  const email = 'robertoparetdev@gmail.com'
-  const phoneDisplay = '+34 631 543 378'
-  const whatsappNumber = '34631543378'
-  const whatsappMessage = encodeURIComponent('Hola Roberto, me gustaría hablar contigo sobre un proyecto.')
-
   const channels = [
     {
       label: 'Correo electrónico',
-      value: email,
+      value: siteConfig.email,
       action: 'Enviar correo',
-      href: `mailto:${email}`,
+      href: `mailto:${siteConfig.email}`,
       icon: <Mail className="w-7 h-7" />,
       external: false
     },
     {
       label: 'WhatsApp',
-      value: phoneDisplay,
+      value: siteConfig.phone.display,
       action: 'Abrir chat',
-      href: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+      href: whatsappLink('Hola Roberto, me gustaría hablar contigo sobre un proyecto.'),
       icon: <WhatsAppIcon className="w-7 h-7" />,
       external: true
     }
