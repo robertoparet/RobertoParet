@@ -17,7 +17,14 @@ const Footer = () => {
               <span>{siteConfig.social.instagram.handle}</span>
             </a>
           </div>
-          <div className="border-t border-gray-200 pt-6">
+          <div className="border-t border-gray-200 pt-6 space-y-3">
+            <nav className="flex justify-center gap-6 text-sm text-gray-600">
+              <a href="#hero" className="hover:text-gray-900 transition-colors">Inicio</a>
+              <a href="#solutions" className="hover:text-gray-900 transition-colors">Servicios</a>
+              <a href="#projects" className="hover:text-gray-900 transition-colors">Proyectos</a>
+              <a href="/blog" className="hover:text-gray-900 transition-colors">Blog</a>
+              <a href="#contact" className="hover:text-gray-900 transition-colors">Contacto</a>
+            </nav>
             <p className="text-gray-500 text-sm font-light">
               © {new Date().getFullYear()} {siteConfig.name}. Todos los derechos reservados.
             </p>

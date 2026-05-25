@@ -3,6 +3,8 @@
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug/index.html" },
     { "source": "/:path*", "destination": "/index.html" }
   ],
   "headers": [
