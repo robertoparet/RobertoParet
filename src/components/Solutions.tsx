@@ -69,6 +69,18 @@ const Solutions = () => {
             </div>
           ))}
         </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-gray-600 font-light mb-4">
+            ¿Quieres saber más antes de contratar?
+          </p>
+          <a
+            href="/blog"
+            className="inline-flex items-center gap-2 text-gray-900 font-medium hover:underline"
+          >
+            Lee mis guías y artículos del blog →
+          </a>
+        </div>
       </div>
     </section>
   )

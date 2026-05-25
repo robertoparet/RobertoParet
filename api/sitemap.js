@@ -19,6 +19,12 @@ export default function handler(req, res) {
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://robertoparet.com/blog/seo-tecnico-autonomos-guia-basica</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>`
 
   res.setHeader('Content-Type', 'application/xml; charset=utf-8')
